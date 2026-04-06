@@ -72,7 +72,7 @@ while True:
         print()
         
     elif opcion == "4":
-        print("Gracias por usar el Cifrado Cesar. Hasta luego!")
+        print("Gracias por usar el cifrado")
         break
         
     else:
