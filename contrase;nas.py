@@ -1,4 +1,4 @@
-# Validador de contras
+# Validador de contrasenas
 # ----------------------------
 def tiene_largo_valido(password):
     if len(password) >= 8:
@@ -26,14 +26,15 @@ def tiene_especial(password):
     return False
 
 def validar_password(password):
-    if tiene_largo_valido(password) and tiene_mayuscula(password) and tiene_digito(password) and tiene_especial(password):
+    if (tiene_largo_valido(password) and tiene_mayuscula(password) 
+        and tiene_digito(password) and tiene_especial(password)):
         return True
     else:
         return False
 
 def diagnosticar_password(password):
     print()
-    print("Analizando contraseña:", password)
+    print("Analizando contrasena:", password)
     
     if not tiene_largo_valido(password):
         print("Debe tener al menos 8 caracteres")
@@ -49,15 +50,15 @@ def diagnosticar_password(password):
     
     if validar_password(password):
         print()
-        print("CONTRASEÑA VALIDA!")
+        print("CONTRASENA VALIDA!")
         return True
     else:
         print()
-        print("Contraseña NO valida. Intenta de nuevo.")
+        print("Contrasena NO valida. Intenta de nuevo.")
         return False
 
 # -------------------
-print("           VALIDADOR DE CONTRASEÑAS")
+print("           VALIDADOR DE CONTRASENAS")
 print()
 print("REGLAS:")
 print("1. Minimo 8 caracteres")
@@ -67,10 +68,10 @@ print("4. Al menos un caracter especial (! @ # $ %)")
 
 contrasena_valida = False
 
-while contrasena_valida == False:
+while not contrasena_valida:
     print()
-    password_usuario = input("Ingresa tu contraseña: ")
+    password_usuario = input("Ingresa tu contrasena: ")
     contrasena_valida = diagnosticar_password(password_usuario)
 
 print()
-print("FELICIDADES! Contraseña aceptada.")
+print("FELICIDADES! Contrasena aceptada.")
