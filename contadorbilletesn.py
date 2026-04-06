@@ -1,4 +1,4 @@
-# Cajero automatico
+# Cajero tipo contador
 # -------------
 def calcular_billetes():
     print()
