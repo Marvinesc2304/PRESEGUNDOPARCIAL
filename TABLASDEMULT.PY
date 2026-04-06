@@ -1,10 +1,14 @@
-# Función 1: Tabla de multiplicar
-def tabla(n):
-    print(f"\nTABLA DEL {n}")
-    for i in range(1, 11):
-        print(f"{n} x {i} = {n * i}")
+# Tablas 
+# -------------------------------------------
 
-# Función 2: Verificar si es primo
+def tabla(n):
+    print()
+    print("TABLA DEL", n)
+    print("------------------")
+    for i in range(1, 11):
+        print(n, "x", i, "=", n * i)
+    print("------------------")
+
 def es_primo(n):
     if n < 2:
         return False
@@ -13,24 +17,66 @@ def es_primo(n):
             return False
     return True
 
-# Función 3: Tablas de números primos
 def tablas_primos(limite):
-    print(f"\n=== TABLAS DE PRIMOS hasta {limite} ===")
+    print()
+    print("=== TABLAS DE PRIMOS hasta", limite, "===")
+    print()
     for numero in range(2, limite + 1):
         if es_primo(numero):
             tabla(numero)
 
-# Ejemplo de uso
-print("=== EJEMPLO: tablas_primos(10) ===")
-tablas_primos(10)
+# ------------------------------------------------------------
+print("Bienvenido al generador de tablas de multiplicar")
+print()
 
-print("\n=== EJEMPLO: tablas_primos(20) ===")
-tablas_primos(20)
+while True:
+    print("--- Menu ---")
+    print("1. Ver tablas de numeros primos (hasta un limite)")
+    print("2. Ver tabla de un numero especifico")
+    print("3. Verificar si un numero es primo")
+    print("4. Salir")
+    print()
 
-# Con input del usuario
-print("\n" + "=" * 40)
-try:
-    limite_usuario = int(input("Ingresa un límite para ver las tablas de primos: "))
-    tablas_primos(limite_usuario)
-except ValueError:
-    print("Debes ingresar un número")
+    opcion = input("Elige una opcion (1,2,3,4): ")
+    print()
+
+    if opcion == "1":
+        try:
+            limite = int(input("Ingresa el limite (desde 2 hasta...): "))
+            if limite >= 2:
+                tablas_primos(limite)
+            else:
+                print("El limite debe ser mayor o igual a 2")
+            print()
+        except:
+            print("Debes ingresar un numero entero")
+            print()
+
+    elif opcion == "2":
+        try:
+            num = int(input("Ingresa el numero para ver su tabla: "))
+            tabla(num)
+            print()
+        except:
+            print("Debes ingresar un numero entero")
+            print()
+
+    elif opcion == "3":
+        try:
+            num = int(input("Ingresa el numero para saber si es primo: "))
+            if es_primo(num):
+                print(num, "SI es un numero primo")
+            else:
+                print(num, "NO es primo")
+            print()
+        except:
+            print("Debes ingresar un numero entero")
+            print()
+
+    elif opcion == "4":
+        print("Gracias por usar el programa. Hasta luego!")
+        break
+
+    else:
+        print("Opcion no valida. Elige 1,2,3 o 4.")
+        print()
