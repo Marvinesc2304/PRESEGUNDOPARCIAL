@@ -1,6 +1,5 @@
-
 # Calculadora de propinas 
-# ------------------------------------------------------------
+# ----------------------------
 
 def calcular_propina(subtotal, porcentaje):
     propina = subtotal * porcentaje / 100
@@ -21,7 +20,7 @@ def aplicar_descuento(subtotal, descuento_pct):
     nuevo_subtotal = subtotal * (100 - descuento_pct) / 100
     return nuevo_subtotal
 
-# ------------------------------------------------------------
+# -------------------
 print("Bienvenido a la calculadora de propinas")
 print()
 
